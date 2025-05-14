@@ -22,7 +22,7 @@ struct Vector3 {
 float Dot(Vector3 a, Vector3 b);
 float Magnitude(Vector3 a);
 Vector3 Normalize(Vector3 a);
-void RandomizeenemyPositions(std::vector<Vector3>& positions);
+void RandomizeEnemyPositions(std::vector<Vector3>& positions);
 void SortEnemyRelativeTo(Vector3 playerLocation, Vector3 playerDir, std::vector<Vector3>& allPositions, std::vector<Vector3>& inFront, std::vector<Vector3>& behind, std::vector<Vector3>& perpendicular);
 void Print(std::vector<Vector3> enemiesBehind);
 
@@ -44,7 +44,7 @@ int main() {
     Vector3 playerDirection = Vector3(1, 0, 0);
 
     std::vector<Vector3> enemyPositions(NUM_OF_ENEMIES);
-    RandomizeenemyPositions(enemyPositions);
+    RandomizeEnemyPositions(enemyPositions);
 
     std::vector<Vector3> enemiesBehind;
     std::vector<Vector3> enemiesInFront;
@@ -82,7 +82,7 @@ float Dot(const Vector3 a, const Vector3 b){ return (a.x * b.x) + (a.y * b.y) + 
 float Magnitude(const Vector3 a){ return (sqrtf(Dot(a, a))); }
 Vector3 Normalize(const Vector3  a) { return {a.x/Magnitude(a), a.y/Magnitude(a),a.z/Magnitude(a)}; }
 
-void RandomizeenemyPositions(std::vector<Vector3> &positions) {
+void RandomizeEnemyPositions(std::vector<Vector3> &positions) {
     int MAX = 100;
     int MIN = -100;
     int range = MAX - MIN + 1;
